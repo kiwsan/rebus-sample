@@ -39,7 +39,7 @@ namespace Subscriber1.WebApi
             // 1.1. Configure Rebus
             services.AddRebus(configure => configure
                 .Logging(x => x.MicrosoftExtensionsLogging(loggerFactory))
-                .Transport(t => t.UsePostgreSql("server=localhost; database=rebus; user id=postgres; password=postgres; maximum pool size=30", "messages", "Subscriber1.WebApi"))
+                .Transport(t => t.UseSqlServer("Server=localhost;Database=rebus;User Id=sa;Password=P@ssw0rd1;", "Subscriber1.WebApi"))
                 .Routing(r => r.TypeBased().MapAssemblyOf<StringMessage>("Publisher.WebApi"))
                 .Options(o =>
                     {
