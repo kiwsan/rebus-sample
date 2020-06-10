@@ -3,6 +3,7 @@ version: "3.1"
 
 services:
   postgres:
+    container_name: postgres
     image: postgres
     restart: always
     environment:
@@ -12,6 +13,7 @@ services:
       - 5432:5432
 
   mssqlserver:
+    container_name: mssqlserver
     image: mcr.microsoft.com/mssql/server
     restart: always
     environment:
@@ -21,6 +23,7 @@ services:
       - 1433:1433
 
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
